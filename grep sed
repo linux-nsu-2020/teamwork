@@ -1,0 +1,32 @@
+1) cat google-10000-english.txt | grep -c "\<a[^ ]*a\>"
+41
+
+2) cat google-10000-english.txt | grep -c -v "\<a[^ ]*a\>"
+1209
+
+3)cat google-10000-english.txt | grep -i -o "\<a[^ ]*s[^ ]*a\>" | wc -w
+5
+
+4) cat google-10000-english.txt | grep -i -o "\<a[ante]*a\>" | wc -w
+6
+
+5) cat google-10000-english.txt | grep -c "\<a[^nte]*a\>"
+15
+
+6) cat google-10000-english.txt | grep -c "\<[^ ]*a\>"
+266
+
+7) cat google-10000-english.txt | grep -i -o "\<[abcde]\{3,\}\>" | wc -w
+20
+
+8)grep -o '[^ ]*[abc]\{4,\}[^ ]*' google-10000-english.txt | wc -w
+1
+
+
+
+
+Sed
+1) sed -i "s/o/0/g" google-10000-english.txt
+2) sed -i "s/ed\>/d/g" google-10000-english.txt
+3) sed -i "s\<{7}*\>//g" google-10000-english.txt
+4) sed -i "s\<[^r ]*\>/(&)/g" google-10000-english.txt
